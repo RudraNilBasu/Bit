@@ -1,0 +1,7 @@
+*~
+/nbproject/private/
+/nbproject/
+/build/
+/web/META-INF/context.xml
+build.xml
+src/constants/DatabaseLogin.java
