@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="DBControl.DBEngine" %>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,6 +15,24 @@
     </head>
     <body>
         <h1>Login as admin</h1>
+        <%
+            String username, password;
+            PreparedStatement insertAction = null;
+            
+            if (request.getParameter("username") != null && request.getParameter("password") != null) {
+                username = request.getParameter("username");
+                password = request.getParameter("password");
+                
+                DBEngine dbengine = new DBEngine();
+                dbengine.establishConnection();
+                
+                Connection con = dbengine.getConnection();
+                insertAction = con.prepareStatement("INSERT INTO student (username, password) "
+                + "VALUES ('"+username+"','"+password+"')");
+                
+                insertAction.executeUpdate();
+            }
+            %>
         <form name="Register" action="register.jsp" method="POST">
             <table border="0">
                 <tbody>
