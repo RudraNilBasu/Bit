@@ -12,8 +12,9 @@
         <title>Bit | Home</title>
     </head>
     <body>
+        <p>New User? Register <a href="register.jsp">here</a></p>
         <h1>Admin Login</h1>
-        <form name="admin_login" action="admin_login" method="POST">
+        <form name="admin_login" action="admin_login.jsp" method="POST">
             <table border="0">
                 <tbody>
                     <tr>
@@ -27,11 +28,10 @@
                 </tbody>
             </table>
             <input type="submit" value="Login" name="login" />
-            <input type="submit" value="Register" name="register" />
         </form>
         
         <h1>Student Login</h1>
-        <form name="student_login" action="student_login" method="POST">
+        <form name="student_login" action="student_login.jsp" method="POST">
             <table border="0">
                 <tbody>
                     <tr>
@@ -45,7 +45,6 @@
                 </tbody>
             </table>
             <input type="submit" value="Login" name="login" />
-            <input type="submit" value="Register" name="register" />
         </form>
     </body>
 </html>
